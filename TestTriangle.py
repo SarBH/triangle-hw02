@@ -38,6 +38,10 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(10,10,11),'Isoceles')
         self.assertEqual(classifyTriangle(34, 34, 35), 'Isoceles', 'is isoceles even though its side length is non-integer')
 
+    def testInvalidInput(self): 
+        self.assertEqual(classifyTriangle(10.5,10,11),'InvalidInput', 'cant accept non integer side values')
+        self.assertEqual(classifyTriangle('thirty', 34, '35'), 'InvalidInput', 'cant accept string values')
+
 if __name__ == '__main__':
     print('Running unit tests')
     unittest.main(verbosity=2)
